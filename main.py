@@ -15,7 +15,8 @@ def fetch_daily(symbol: str, api_key: str) -> dict:
         "symbol": symbol,
         "apikey": api_key,
         "outputsize": "compact",
-    }
+}
+    print("Request params:", params)
     r = requests.get(API_URL, params=params, timeout=20)
     r.raise_for_status()
     return r.json()
